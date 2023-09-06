@@ -1,38 +1,140 @@
-.App {
-  text-align: center;
+
+.nav{
+height: 12vh;
+background-color: white;
+font-family: 'Playlist';
+
+padding: 0px 15px;
+display: flex;
+justify-content: space-between;
+z-index: 2;
+position: fixed;
+width: 100%;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.t12{
+  padding-top: 12vh;
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.logo{
+  height: 10vh;
+  width: auto;
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.lf{
+  margin-left: 20px;
+  height: inherit;
   display: flex;
-  flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  gap: 7px;
+  background-image: url('/public/imgs/logo.png');
+  background-position: center; 
+  background-repeat: no-repeat; 
+  background-size:45%;
+}
+.rf{
+  display: flex;
+  align-items: center;
+  gap:20px;
+}
+.sbtn{
+  border: 1px solid #4B91F1;
+  border-left: 0;
+  border-top-right-radius: 13px;
+  border-bottom-right-radius: 13px;
+  height: 3.5vh;
+  width: 4vh;
+  transition: width 0.5s ease;
+}
+.searchdiv{
+  display: flex;
+  align-items: center;
+}
+.search{
+  
+  border-top-left-radius: 13px;
+  border-bottom-left-radius: 13px;
+  
+  height: 3.5vh;
+  border: 1px solid #4B91F1;
+  border-right: 0px;
+  padding-right: 7px;
+  padding-left: 3px;
+  font-family: 'Borel', cursive;
+
+  font-family: 'Noto Sans', sans-serif;
+}
+.search:focus{
+  height: 3.75vh;
+  outline: 0;
+  border: 2px solid #4B91F1;
+  border-right: 0px;
+  -webkit-box-shadow: 0 0 15px #4B91F1;
+        box-shadow: 0 0 15px #4B91F1;
+        z-index: 1;
+}
+.search:focus + .sbtn{
+  height: 3.75vh;
+  border: 2px solid #4B91F1;
+  
+  -webkit-box-shadow: 0 0 15px #4B91F1;
+        box-shadow: 0 0 15px #4B91F1;
+        border-left: 0;
+  width: 5.5vh;
+  
+}
+
+.navbtn{
+  height: 3.5vh;
+  border-radius: 12px;
+  border: 0px;
+  
+background: linear-gradient(90deg, rgba(235,141,182,1) 0%, rgba(140,183,235,1) 100%);
+-webkit-transition: all 2s ease-out;
+  -moz-transition: all 2s ease-out;
+  -o-transition: all 2s ease-out;
+  transition: all 0.1s ease;
+  font-family: 'Borel', cursive;
+  padding-left: 7px;
+  padding-right: 7px;
+  font-family: 'Noto Sans', sans-serif;
   color: white;
+  font-size: inherit;
+  cursor: pointer;
 }
-
-.App-link {
-  color: #61dafb;
+.navbtn:hover{
+  height: 3.75vh;
+  background: linear-gradient(90deg,rgba(140,183,235,1) 0%,rgba(235,141,182,1) 30% ,rgba(140,183,235,1) 100% );
 }
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.item{
+  height: 200px;
+  border-radius: 15px;
+  overflow: hidden;
+  background-size: cover;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+}
+.item:hover{
+  -webkit-filter: grayscale(90%);
+  filter: grayscale(90%);
+  cursor: pointer;
+}
+.item:hover >.title{
+  display: block;
+}
+.title{
+  position: relative;
+  display: none;
+  bottom: 40px;
+  left: 10px;
+  text-shadow: 2px 2px 5px white;
+}
+.thumb{
+  height: 100%;
+  width: 100%;
+}
+@font-face {
+  font-family: 'Playlist';
+src: url('./fonts/Playlist.otf') format('opentype');
+font-weight: normal;
+font-style: normal;
 }
